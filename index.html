@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Github Issue Tracker</title>
-</head>
-<body>
-    
-</body>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GitHub Issues Tracker</title>
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+
+    <body class="login-page">
+
+        <div class="login-card">
+
+            <img class="logo" src="https://cdn-icons-png.flaticon.com/512/25/25231.png">
+
+            <h2>GitHub Issues Tracker</h2>
+            <p class="subtitle">Sign in to manage your issues</p>
+
+            <label class="input-label">Username</label>
+            <input id="username" placeholder="Enter Username">
+            <p class="hint">Default: admin</p>
+
+            <label class="input-label">Password</label>
+            <input type="password" id="password" placeholder="Enter Password">
+            <p class="hint">Default: admin123</p>
+
+            <button onclick="login()">Sign In</button>
+
+            <div style="margin-top: 10px;" class="divider">OR</div>
+
+            <div class="demo">
+                <p style="font-size: 14px; margin-top: -5px;color: #64748B; font-weight: 400;">Demo Credentials :</p>
+                <p><b>Username:</b> admin</p>
+                <p><b>Password:</b> admin123</p>
+            </div>
+
+        </div>
+
+        <script src="./js/login.js"></script>
+
+    </body>
 </html>
