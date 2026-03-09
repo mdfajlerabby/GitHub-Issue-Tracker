@@ -57,45 +57,45 @@ card.onclick=()=>openModal(issue.id)
 
 card.innerHTML=`
 
-<div class="card-top">
+    <div class="card-top">
 
-<div class="status-circle">
-<img src="./assets/${issue.status}.png">
-</div>
+        <div class="status-circle">
+            <img src="./assets/${issue.status}.png">
+        </div>
 
-<div class="priority ${issue.priority.toLowerCase()}">
-${issue.priority}
-</div>
+        <div class="priority ${issue.priority.toLowerCase()}">
+        ${issue.priority}
+        </div>
 
-</div>
+    </div>
 
-<h3 class="issue-title">${issue.title}</h3>
+    <h3 class="issue-title">${issue.title}</h3>
 
-<p class="issue-desc">
-${issue.description}
-</p>
+    <p class="issue-desc">
+    ${issue.description}
+    </p>
 
-<div class="labels">
+    <div class="labels">
 
-<div class="label bug">
-<img src="./assets/bug.png">
-BUG
-</div>
+        <div class="label bug">
+            <img src="./assets/bug.png">
+            BUG
+        </div>
 
-<div class="label help">
-<img src="./assets/help.png">
-HELP WANTED
-</div>
+        <div class="label help">
+            <img src="./assets/help.png">
+            HELP WANTED
+        </div>
 
-</div>
+    </div>
 
-<div class="card-footer">
+    <div class="card-footer">
 
-<p>#${issue.id} by ${issue.author}</p>
+        <p>#${issue.id} by ${issue.author}</p>
 
-<p>${formatDate(issue.createdAt)}</p>
+        <p>${formatDate(issue.createdAt)}</p>
 
-</div>
+    </div>
 
 `
 
@@ -145,59 +145,58 @@ const issue = data.data
 
 modalBody.innerHTML=`
 
-<h2 class="modal-title">${issue.title}</h2>
+    <h2 class="modal-title">${issue.title}</h2>
 
-<div class="modal-meta">
+    <div class="modal-meta">
 
-<span class="status-pill ${issue.status}">
-${issue.status==="open"?"Opened":"Closed"}
-</span>
+        <span class="status-pill ${issue.status}">
+        ${issue.status==="open"?"Opened":"Closed"}
+        </span>
 
-<span>Opened by ${issue.author}</span>
+        <span>Opened by ${issue.author}</span>
 
-<span>${formatDate(issue.createdAt)}</span>
+        <span>${formatDate(issue.createdAt)}</span>
 
-</div>
-
-
-<div class="labels modal-labels">
-
-<div class="label bug">
-<img src="./assets/bug.png"> BUG
-</div>
-
-<div class="label help">
-<img src="./assets/help.png"> HELP WANTED
-</div>
-
-</div>
+    </div>
 
 
-<p class="modal-desc">
-${issue.description}
-</p>
+    <div class="labels modal-labels">
+
+        <div class="label bug">
+            <img src="./assets/bug.png"> BUG
+        </div>
+
+        <div class="label help">
+            <img src="./assets/help.png"> HELP WANTED
+        </div>
+
+    </div>
 
 
-<div class="modal-box">
-
-<div>
-<p class="box-title">Assignee:</p>
-<p class="box-value">${issue.author}</p>
-</div>
-
-<div>
-<p class="box-title">Priority:</p>
-<span class="priority ${issue.priority.toLowerCase()}">
-${issue.priority}
-</span>
-</div>
-
-</div>
+    <p class="modal-desc">
+    ${issue.description}
+    </p>
 
 
-<div class="modal-actions">
-<button onclick="closeModal()">Close</button>
-</div>
+    <div class="modal-box">
+
+        <div>
+            <p class="box-title">Assignee:</p>
+            <p class="box-value">${issue.author}</p>
+        </div>
+
+        <div>
+            <p class="box-title">Priority:</p>
+            <span class="priority ${issue.priority.toLowerCase()}">
+            ${issue.priority}
+            </span>
+        </div>
+
+    </div>
+
+    <div class="modal-actions">
+        <button onclick="closeModal()">Close</button>
+    </div>
 
 `
 
