@@ -1,129 +1,149 @@
-# 🌟 Welcome To (সহজ সরল সিম্পল) Assignment - 5
+1️⃣ What is the difference between var, let, and const?
 
-# **📅 Deadline For 60 marks:** 9th March, 2026 (11:59 pm ⏱️)  
-#  📅 No Deadline For 50 marks  
-# **📅 Deadline For 30 marks:** Any time after 9th March.
+In JavaScript, var, let, and const are used to declare variables, but they behave differently in terms of scope, redeclaration, and reassignment.
 
----
+var is the older way of declaring variables in JavaScript. It is function-scoped, meaning the variable is accessible anywhere within the function it is declared in. Variables declared with var can also be redeclared and reassigned, which sometimes causes unexpected behavior in large programs.
 
-# Assignment-05: GitHub Issues Tracker
+Example:
 
+var name = "John";
+var name = "Mike"; // redeclaration allowed
 
-### **API Endpoints:**
-###  **All Issues:** 
-  - https://phi-lab-server.vercel.app/api/v1/lab/issues 
+let was introduced in ES6. It is block-scoped, which means it only exists inside the block {} where it is declared. Unlike var, a variable declared with let cannot be redeclared in the same scope, but it can be reassigned.
 
+Example:
 
-###  **Single Issue:**
-   - https://phi-lab-server.vercel.app/api/v1/lab/issue/{id}
+let age = 20;
+age = 25; // allowed
 
-   - Example: https://phi-lab-server.vercel.app/api/v1/lab/issue/33
+const is also block-scoped like let, but it is used for variables whose values should not change. Once a value is assigned to a const variable, it cannot be reassigned.
 
+Example:
 
-###  **Search Issue:** https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q={searchText}
+const country = "Bangladesh";
 
-   - Example:  https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=notifications
+In summary:
 
+var → function scoped, can redeclare and reassign
 
----
+let → block scoped, cannot redeclare but can reassign
 
-## 📝 Main Requirements
+const → block scoped, cannot redeclare or reassign
 
-## 🎨 Design Part
+2️⃣ What is the spread operator (...)?
 
-## Login Page
-- Create a login page containing a logo, title, and sub-title
-- Below that, there will be 2 inputs, a sign-in button, and a demo credential to sign in. Follow the Figma for this page 
-- Styled as per Figma
+The spread operator (...) in JavaScript is used to expand or unpack elements of an array or object. It allows us to copy, merge, or pass multiple values easily.
 
-## Main Page: 
+For example, if we have an array:
 
-### Navbar: 
+const numbers = [1, 2, 3];
 
-- Navbar with website logo/name on the left
-- Search input and button on the right
+Using the spread operator, we can create a copy of the array:
 
-### Tab Section like Figma: 
+const newNumbers = [...numbers];
 
-- 3 tab ( All, Open, Closed) at the top of this section.(**All**, **Open**, **Closed**)
+We can also combine arrays:
 
-- Below the tab, there will be an icon, the issue count, some text on the left, and an open and closed marker on the right
+const arr1 = [1, 2];
+const arr2 = [3, 4];
 
-- Responsiveness: The website should be responsive for mobile devices. It is totally up to you. 
+const result = [...arr1, ...arr2];
 
+Result:
 
---- 
+[1, 2, 3, 4]
 
+The spread operator makes code shorter, cleaner, and easier to read.
 
-## ⚙️ Functionalities
-- In login page, there will be default admin credentials (username, password). You need to sign in using these credentials.
+3️⃣ What is the difference between map(), filter(), and forEach()?
 
-- Load all issues and display as per Figma
+These three are common array methods in JavaScript used to work with array elements, but they serve different purposes.
 
-- On clicking on an open or closed tab, it will load the issues data of the related tab and show it in a display-like card in a 4-column layout like Figma. By default, it will show all data 
+map() is used to transform each element of an array and return a new array. The length of the new array remains the same.
 
-- Each card shows:
-  - Title
-  - Description
-  - Status
-  - Category
-  - Author
-  - Priority
-  - Label
-  - CreatedAt
-- Clicking on a tree name in a card will open a modal and show all the information about that Issue. 
+Example:
 
-### 🚀 Challenges
+const numbers = [1, 2, 3];
 
+const doubled = numbers.map(num => num \* 2);
 
-- Show the card Top border based on their category(open, closed), open card will have Green Boder, closed card will have a purple border on top. 
+Result:
 
-- Loading spinner on data load
+[2, 4, 6]
 
-- Show active button on changing category names
+filter() is used to select specific elements from an array based on a condition. It also returns a new array, but the length may be smaller.
 
-- Implement Search Functionality and 8 meaningful github commit.  
+Example:
 
-- Create a readme file and answer this question on your own. Don’t copy-paste from Google or any AI chatbot. 
-    - 1️⃣ What is the difference between var, let, and const?
-    - 2️⃣ What is the spread operator (...)?
-    - 3️⃣ What is the difference between map(), filter(), and forEach()?
-    - 4️⃣ What is an arrow function?
-    - 5️⃣ What are template literals?
+const numbers = [1, 2, 3, 4];
 
+const even = numbers.filter(num => num % 2 === 0);
 
----
+Result:
 
-## 🛠️ Technology Stack
+[2, 4]
 
-- **HTML**
-- **CSS** (Vanilla/Tailwind/DaisyUI)
-- **JavaScript** (Vanilla)
+forEach() is used to execute a function for each array element, but it does not return a new array.
 
----
+Example:
 
-## 🔑 Demo Credentials
+const numbers = [1, 2, 3];
 
-```text
-Username: admin
-Password: admin123
-```
+numbers.forEach(num => {
+console.log(num);
+});
 
+Summary:
 
----
+Method Returns New Array Purpose
+map() Yes Transform data
+filter() Yes Select specific items
+forEach() No Loop through elements
 
-### Optional: 
- - No need to show status: Open, Closed styles On modals. 
- - No Need to show icon on labels 
- - No need to apply styles on Priority 
---- 
+4️⃣ What is an arrow function?
 
+An arrow function is a shorter and more modern way to write functions in JavaScript. It was introduced in ES6 and helps make code cleaner and more concise.
 
-## 📤 What to submit
+Traditional function example:
 
-- **GitHub Repository Link:**
-- **Live Site Link:**
+function add(a, b) {
+return a + b;
+}
 
----
+Arrow function version:
 
+const add = (a, b) => {
+return a + b;
+};
 
+If the function has only one line, it can be written even shorter:
+
+const add = (a, b) => a + b;
+
+Arrow functions are commonly used in array methods like map(), filter(), and forEach() because they make the code shorter and easier to read.
+
+5️⃣ What are template literals?
+
+Template literals are a modern way to work with strings in JavaScript. They were introduced in ES6 and allow us to embed variables and expressions directly inside strings.
+
+Template literals use backticks ( ) instead of single or double quotes.
+
+Example:
+
+const name = "John";
+const age = 25;
+
+const message = `My name is ${name} and I am ${age} years old.`;
+
+Output:
+
+My name is John and I am 25 years old.
+
+Template literals make it easier to combine strings and variables without using the + operator.
+
+They also support multi-line strings, which was difficult before ES6.
+
+Example:
+
+const text = `Hello
+Welcome to JavaScript`;
