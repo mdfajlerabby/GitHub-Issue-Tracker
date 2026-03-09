@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Issues Tracker</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+    <div class="logo">
+    <img src="./assets/github-logo.png">
+    <h2>GitHub Issues Tracker</h2>
+    </div>
+
+    <div class="nav-right">
+
+        <div class="search-box">
+            <img src="" class="search-icon">
+            <input id="searchInput" placeholder="Search issues..." onkeyup="searchIssues()">
+        </div>
+
+        <button class="new-btn">+ New Issue</button>
+
+    </div>
+
+</div>
+
+
+<!-- TABS -->
+
+<div class="tabs">
+
+    <button class="tab active" onclick="loadIssues()">All</button>
+    <button class="tab" onclick="loadIssues('open')">Open</button>
+    <button class="tab" onclick="loadIssues('closed')">Closed</button>
+
+</div>
+
+
+<!-- ISSUE HEADER -->
+
+<div class="issue-header">
+
+    <div class="issue-left">
+
+    <img src="./assets/Aperture.png" class="issue-icon">
+    <p><span id="issueCount">0</span> Issues</p>
+
+    </div>
+
+    <div class="issue-right">
+
+        <div class="status">
+            <div class="dot open"></div>
+            <p>Open</p>
+        </div>
+
+        <div class="status">
+            <div class="dot closed"></div>
+            <p>Closed</p>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ISSUE CARDS -->
+
+<div id="issuesContainer" class="issues-grid"></div>
+
+
+<!-- MODAL -->
+
+<div id="issueModal" class="modal">
+
+    <div class="modal-content">
+
+        <div id="modalBody"></div>
+
+    </div>
+    
+</div>
+
+<script src="./js/script.js"></script>
+
+</body>
+</html>

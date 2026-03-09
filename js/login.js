@@ -1,18 +1,19 @@
 function login(){
 
-const username=document.getElementById("username").value
-const password=document.getElementById("password").value
+    const username=document.getElementById("username").value
+    const password=document.getElementById("password").value
 
-if(username==="admin" && password==="admin123"){
+    if(username==="admin" && password==="admin123"){
 
-localStorage.setItem("login","true")
+        localStorage.setItem("login","true")
 
-window.location.href="dashboard.html"
+        window.location.href="dashboard.html"
 
-}else{
+        }
+    else{
 
-alert("Invalid Credentials")
+        alert("Invalid Credentials")
 
-}
+    }
 
 }
